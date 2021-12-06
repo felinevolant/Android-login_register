@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/bg2">
 
 
 
@@ -14,6 +15,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="欢迎回来!"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.2"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -23,11 +29,14 @@
         android:id="@+id/showName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="50dp"
         android:text="woo"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.2
+"
         app:layout_constraintBottom_toTopOf="@id/welcome"
-        app:layout_constraintLeft_toLeftOf="parent"
-
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintLeft_toLeftOf="@id/welcome"
+         />
 
 
 

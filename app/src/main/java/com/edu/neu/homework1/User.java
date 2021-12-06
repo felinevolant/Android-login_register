@@ -8,22 +8,24 @@ import java.io.Serializable;
 public class User implements Serializable {
     private String username;
     private String password;
+    private String realname;
+    private String age;
+    private String gender;
     private String email;
     private String phone;
     private String address;
-    private String birthday;
 
-    public User(String username, String password, String email, String phone, String address, String birthday) {
 
+    public User(String username, String password, String realname, String age, String gender, String email, String phone, String address) {
         this.username = username;
         this.password = password;
+        this.realname = realname;
+        this.age = age;
+        this.gender = gender;
         this.email = email;
         this.phone = phone;
         this.address = address;
-        this.birthday = birthday;
     }
-
-
 
     public String getUsername() {
         return username;
@@ -65,12 +67,30 @@ public class User implements Serializable {
         this.address = address;
     }
 
-    public String getBirthday() {
-        return birthday;
+
+
+    public String getRealname() {
+        return realname;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setRealname(String realname) {
+        this.realname = realname;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     /**

@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.regex.Matcher;
@@ -37,12 +39,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private EditText editText9;
     private EditText editText6;
     private EditText editText7;
+    private EditText editText12;
+    private EditText editText13;
+    private RadioGroup rgGender;
+    private RadioButton rbfemale,rbmale,rbLGBTQ;
     private Button button2;
     private MyHelper myHelper;
 
     //一个用户对象
     User findUser2;
-
 
 
 
@@ -84,10 +89,25 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 String username= editText3.getText().toString().trim();
                 String password = editText4.getText().toString().trim();
                 String password1 = editText9.getText().toString().trim();
+                String realname=editText12.getText().toString().trim();
+                String age=editText13.getText().toString().trim();
+                String gender=null;
                 String email = emailMutiAuto.getText().toString().trim();
                 String phone=editText6.getText().toString().trim();
                 String address=editText7.getText().toString().trim();
 
+                int selected=rgGender.getCheckedRadioButtonId();
+                switch (selected){
+                    case R.id.rbfemale:
+                        gender="famale";
+                        break;
+                    case R.id.rbmale:
+                        gender="male";
+                        break;
+                    case R.id.rbLGBTQ:
+                        gender="LGBTQ";
+                        break;
+                }
 
 
                 if(!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(password1)){
@@ -96,10 +116,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             //电话正则验证，应该放在提交按钮里面
                             Boolean isPhone=isPhoneMatchered(PHONE_PATTERN,phone);
                             if(isPhone){
-                                long rowid1=myHelper.add(username,password,email,phone,address);
+                                long rowid1=myHelper.add(username,password,realname,age,gender,email,phone,address);
                                 if(rowid1!=-1){
                                     Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
-                                    findUser2=new User(username,password,email,phone,address,null);
+                                    findUser2=new User(username,password,realname,age,gender,email,phone,address);
 
                                     // bundle
                                     Bundle bundle2 = new Bundle();
@@ -140,6 +160,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         editText6=findViewById(R.id.editText6);
         editText7=findViewById(R.id.editText7);
         button2=findViewById(R.id.button2);
+        editText12=findViewById(R.id.editText12);
+        editText13=findViewById(R.id.editText13);
+        rgGender=findViewById(R.id.rgGender);
+        rbfemale=findViewById(R.id.rbfemale);
+        rbmale=findViewById(R.id.rbmale);
+        rbLGBTQ=findViewById(R.id.rbLGBTQ);
 
 
         //邮箱输入@自动联想
@@ -157,7 +183,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     /**
-     * 正则表达式匹配判断
+     * 电话正则表达式匹配判断
      * @param patternStr 匹配规则
      * @param input 需要做匹配操作的字符串
      * @return true if matched, else false

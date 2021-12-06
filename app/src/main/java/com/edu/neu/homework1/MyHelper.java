@@ -52,9 +52,10 @@ public class MyHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql="create table if not exists User(id integer primary key AUTOINCREMENT," +
+        String sql="create table if not exists User(_id integer primary key AUTOINCREMENT," +
                 "username text, password text," +
-                "email text,phone text,address text,birthday text)";
+                "realname text,age text,gender text,"+
+                "email text,phone text,address text)";
 
 
         db.execSQL(sql);
@@ -79,21 +80,56 @@ public class MyHelper extends SQLiteOpenHelper {
      * update()
      * getAllData()
      */
-    public long add(String username,String password,String email,String phone,String adress){
+    public long add(String username, String password, String realname, String age, String gender, String email, String phone, String address){
         ContentValues values= new ContentValues();
         values.put("username",username);
         values.put("password",password);
+        values.put("realname",realname);
+        values.put("age",age);
+        values.put("gender",gender);
         values.put("email",email);
         values.put("phone",phone);
-        values.put("address",adress);
+        values.put("address",address);
         long rowid = db.insert("User",null,values);
         return rowid;
         //db.execSQL("INSERT INTO User (name,password) VALUES(?,?)",new Object[]{name,password});
     }
-    public void update(String username,String password,String email,String phone,String address){
+    public void update(String username,String password,String realname, String age, String gender,String email,String phone,String address){
         //String updateSql= "update User set password=?,email=?,phone=?,address=? where username=?";
-        db.execSQL("update User set password=?,email=?,phone=?,address=? where username=?",new Object[]{password,email,phone,address,username});
+        db.execSQL("update User set password=?,realname=?,age=?,gender=?,email=?,phone=?,address=? where username=?",new Object[]{password,email,realname,age,gender,phone,address,username});
     }
+
+    //修改密码,一定要注意参数顺序！！！不然没法成功修改
+    public void updatePassword(String username,String password){
+        db.execSQL("update User set password=? where username=?",new Object[]{password,username});
+    }
+    //修改真实姓名
+    public void updateRealName(String username,String realname){
+        db.execSQL("update User set realname=? where username=?",new Object[]{realname,username});
+    }
+    //修改年龄
+    public void updateAge(String username,String age){
+        db.execSQL("update User set age=? where username=?",new Object[]{age,username});
+    }
+    //修改性别
+    public void updateGender(String username,String gender){
+        db.execSQL("update User set gender=? where username=?",new Object[]{gender,username});
+    }
+    //修改邮箱
+    public void updateEmail(String username,String email){
+        db.execSQL("update User set email=? where username=?",new Object[]{email,username});
+    }
+
+    //修改电话
+    public void updatePhone(String username,String phone){
+        db.execSQL("update User set phone=? where username=?",new Object[]{phone,username});
+    }
+
+    //修改地址
+    public void updateAddress(String username,String address){
+        db.execSQL("update User set address=? where username=?",new Object[]{address,username});
+    }
+
 
     //根据用户名寻找用户
     public User findUserByUsername(String username){
@@ -101,13 +137,16 @@ public class MyHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from User where username=?",new String[]{username});
         while(cursor.moveToNext()){
             @SuppressLint("Range") String password = cursor.getString(cursor.getColumnIndex("password"));
+            @SuppressLint("Range") String realname = cursor.getString(cursor.getColumnIndex("realname"));
+            @SuppressLint("Range") String age = cursor.getString(cursor.getColumnIndex("age"));
+            @SuppressLint("Range") String gender = cursor.getString(cursor.getColumnIndex("gender"));
             @SuppressLint("Range") String email= cursor.getString(cursor.getColumnIndex("email"));
             @SuppressLint("Range") String phone = cursor.getString(cursor.getColumnIndex("phone"));
             @SuppressLint("Range") String address = cursor.getString(cursor.getColumnIndex("address"));
-            @SuppressLint("Range") String birthday = cursor.getString(cursor.getColumnIndex("birthday"));
 
 
-            thisUser= new User(username,password,email,phone,address,birthday);
+
+            thisUser= new User(username,password,realname,age,gender,email,phone,address);
         }
         return thisUser;
 
@@ -137,13 +176,15 @@ public class MyHelper extends SQLiteOpenHelper {
         while(cursor.moveToNext()){
             @SuppressLint("Range") String username = cursor.getString(cursor.getColumnIndex("username"));
             @SuppressLint("Range") String password = cursor.getString(cursor.getColumnIndex("password"));
-            @SuppressLint("Range") String email= cursor.getString(cursor.getColumnIndex("email"));
+            @SuppressLint("Range") String realname = cursor.getString(cursor.getColumnIndex("realname"));
+            @SuppressLint("Range") String age = cursor.getString(cursor.getColumnIndex("age"));
+            @SuppressLint("Range") String gender = cursor.getString(cursor.getColumnIndex("realname"));
+            @SuppressLint("Range") String email= cursor.getString(cursor.getColumnIndex("gender"));
             @SuppressLint("Range") String phone = cursor.getString(cursor.getColumnIndex("phone"));
             @SuppressLint("Range") String address = cursor.getString(cursor.getColumnIndex("address"));
-            @SuppressLint("Range") String birthday = cursor.getString(cursor.getColumnIndex("birthday"));
 
 
-            list.add(new User(username,password,email,phone,address,birthday));
+            list.add(new User(username,password,realname,age,gender,email,phone,address));
         }
         return list;
     }
