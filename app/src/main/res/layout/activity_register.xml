@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg1"
-    tools:context=".RegisterActivity">
+    tools:context=".activity.RegisterActivity">
 
 
     <!--输入用户名-->
@@ -99,7 +99,7 @@
     <!--输入邮箱-->
 
 
-    <com.edu.neu.homework1.MailBoxAssociateView
+    <com.edu.neu.homework1.util.MailBoxAssociateView
         android:id="@+id/emailMutiAuto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

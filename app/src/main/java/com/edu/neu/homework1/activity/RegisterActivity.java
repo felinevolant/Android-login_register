@@ -1,4 +1,4 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,11 @@ import android.widget.MultiAutoCompleteTextView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.edu.neu.homework1.util.MailBoxAssociateTokenizer;
+import com.edu.neu.homework1.dao.MyHelper;
+import com.edu.neu.homework1.R;
+import com.edu.neu.homework1.entity.User;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

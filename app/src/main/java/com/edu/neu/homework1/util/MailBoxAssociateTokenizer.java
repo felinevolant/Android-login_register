@@ -1,4 +1,4 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.util;
 
 import android.text.SpannableString;
 import android.text.Spanned;

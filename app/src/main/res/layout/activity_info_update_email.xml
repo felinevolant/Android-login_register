@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InfoUpdateEmailActivity"
+    tools:context=".activity.InfoUpdateEmailActivity"
     android:background="@drawable/bg3">
 
-    <com.edu.neu.homework1.MailBoxAssociateView
+    <com.edu.neu.homework1.util.MailBoxAssociateView
         android:id="@+id/emailMutiAutoupdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

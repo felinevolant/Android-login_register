@@ -1,4 +1,4 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.edu.neu.homework1.dao.MyHelper;
+import com.edu.neu.homework1.R;
 
 public class InfoUpdateGenderActivity extends AppCompatActivity implements View.OnClickListener {
 

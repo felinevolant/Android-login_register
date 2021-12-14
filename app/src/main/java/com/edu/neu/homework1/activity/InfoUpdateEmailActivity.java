@@ -1,4 +1,4 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,10 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.edu.neu.homework1.util.MailBoxAssociateTokenizer;
+import com.edu.neu.homework1.dao.MyHelper;
+import com.edu.neu.homework1.R;
 
 public class InfoUpdateEmailActivity extends AppCompatActivity implements View.OnClickListener {
 

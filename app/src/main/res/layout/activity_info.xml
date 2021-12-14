@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InfoActivity"
+    tools:context=".activity.InfoActivity"
     android:background="@drawable/bg3">
     <!--输入用户名-->
     <EditText
@@ -74,7 +74,7 @@
         app:layout_constraintLeft_toLeftOf="@id/etUsername"
         />
     <!--输入邮箱-->
-    <com.edu.neu.homework1.MailBoxAssociateView
+    <com.edu.neu.homework1.util.MailBoxAssociateView
         android:id="@+id/emailMutiAuto1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

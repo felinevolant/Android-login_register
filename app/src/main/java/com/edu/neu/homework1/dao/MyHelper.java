@@ -1,4 +1,4 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.dao;
 
 
 import android.annotation.SuppressLint;
@@ -8,7 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
+import com.edu.neu.homework1.entity.User;
 
 import java.util.ArrayList;
 

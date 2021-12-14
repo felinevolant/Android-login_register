@@ -1,12 +1,7 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +12,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.edu.neu.homework1.dao.MyHelper;
+import com.edu.neu.homework1.R;
+import com.edu.neu.homework1.entity.User;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -70,24 +67,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onCreateOptionsMenu(Menu menu) {
         //活动界面上加载菜单（memu菜单文件）
         this.getMenuInflater().inflate(R.menu.menu_layout,menu);
+        this.setTitle("Weather Today");
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        String thisUsername = huntUser.getUsername();
-        huntUser=myHelper.findUserByUsername(thisUsername);
-        //点击进入修改活动的activity
-        // bundle
-        Bundle bundle3 = new Bundle();
-        bundle3.putSerializable("FindUser",huntUser);
-        //intent
-        Intent intent3 = new Intent(this, InfoActivity.class);
-        intent3.putExtras(bundle3);
-        //intent2.putExtras(bundle2);
+        switch (item.getItemId()){
+            case R.id.item1:
+                String thisUsername = huntUser.getUsername();
+                huntUser=myHelper.findUserByUsername(thisUsername);
+                //点击进入修改活动的activity
+                // bundle
+                Bundle bundle3 = new Bundle();
+                bundle3.putSerializable("FindUser",huntUser);
+                //intent
+                Intent intent3 = new Intent(this, InfoActivity.class);
+                intent3.putExtras(bundle3);
+                //intent2.putExtras(bundle2);
 
-        // navigate
-        startActivity(intent3);
+                // navigate
+                startActivity(intent3);
+                break;
+            case R.id.item2:
+                Intent intent4 = new Intent(this,ChooseAreaActivity.class);
+                startActivity(intent4);
+                Toast.makeText(this, "切换城市", Toast.LENGTH_SHORT).show();
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }

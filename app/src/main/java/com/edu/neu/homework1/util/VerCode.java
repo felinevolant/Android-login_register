@@ -1,4 +1,4 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.util;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

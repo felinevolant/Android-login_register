@@ -1,4 +1,4 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.entity;
 
 import java.io.Serializable;
 

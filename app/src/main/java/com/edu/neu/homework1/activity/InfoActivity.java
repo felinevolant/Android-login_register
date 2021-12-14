@@ -1,11 +1,10 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -16,8 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.MultiAutoCompleteTextView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.edu.neu.homework1.util.MailBoxAssociateTokenizer;
+import com.edu.neu.homework1.dao.MyHelper;
+import com.edu.neu.homework1.R;
+import com.edu.neu.homework1.entity.User;
 
 /**
  * 修改个人信息的页面

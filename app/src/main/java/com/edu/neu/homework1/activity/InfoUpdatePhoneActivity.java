@@ -1,4 +1,4 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.edu.neu.homework1.dao.MyHelper;
+import com.edu.neu.homework1.R;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package com.edu.neu.homework1;
+package com.edu.neu.homework1.activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.edu.neu.homework1.dao.MyHelper;
+import com.edu.neu.homework1.R;
+import com.edu.neu.homework1.entity.User;
+import com.edu.neu.homework1.util.VerCode;
+
 import java.util.ArrayList;
-import java.util.Locale;
 
 /**
  * 此类 implements View.OnClickListener 之后，
