@@ -15,13 +15,20 @@
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/activity_login.xml" value="0.2364179037174423" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/activity_main.xml" value="0.2364179037174423" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/activity_register.xml" value="0.35820894502642775" />
+        <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/activity_weather.xml" value="0.1" />
+        <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/aqi.xml" value="0.1644021739130435" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/choose_area.xml" value="0.16197916666666667" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/drag_listview.xml" value="0.18206521739130435" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/drag_listview_item.xml" value="0.18206521739130435" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/first_fragment.xml" value="0.16259057971014493" />
+        <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/forecast.xml" value="0.1644021739130435" />
+        <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/forecast_item.xml" value="0.1644021739130435" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/fragment_choose_area.xml" value="0.16893115942028986" />
+        <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/now.xml" value="0.1644021739130435" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/simple_list_item_1.xml" value="0.17798913043478262" />
+        <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/suggestion.xml" value="0.1421875" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/third_fragment.xml" value="0.1526268115942029" />
+        <entry key="..\:/Android/work_space/homework1/app/src/main/res/layout/title.xml" value="0.1644021739130435" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/menu/menu.xml" value="0.20625" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/menu/menu_layout.xml" value="0.35820894502642775" />
         <entry key="..\:/Android/work_space/homework1/app/src/main/res/xml/network_config.xml" value="0.1421875" />

@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#ff0000ff</color>
     <color name="red">#FFFF0000</color><!--红色-->
+    <color name="cloth_blue">#5F9F9F</color><!--士官服蓝色-->
 </resources>
